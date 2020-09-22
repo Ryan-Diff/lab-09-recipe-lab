@@ -8,7 +8,7 @@ describe('recipe-lab routes', () => {
   beforeEach(() => {
     return pool.query(fs.readFileSync('./sql/setup.sql', 'utf-8'));
   });
-//Create_RUD
+  //Create_RUD
   it('creates a recipe via POST', () => {
     return request(app)
       .post('/api/v1/recipes')
