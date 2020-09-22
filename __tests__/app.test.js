@@ -98,4 +98,16 @@ describe('recipe-lab routes', () => {
         });
       });
   });
+
+  it('deletes a recipe bu id via DELETE', async() => {
+    const recipe = await Recipe.insert({
+      name: 'cookies',
+      directions: []
+    });
+
+    const response = await request(app)
+      .delete((`/api/v1/recipes/${recipe.id}`));
+
+    expect(response.body).toEqual(recipe);
+  });
 });
